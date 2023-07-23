@@ -10368,38 +10368,6 @@ task.spawn(function()
 	end
 end)
 
-runFunction(function()
-local DragonBreathFunny = {Enabled = false}
-DragonBreathFunny = GuiLibrary["ObjectsThatCanBeSaved"]["RenderWindow"]["Api"].CreateOptionsButton({
-	Name = "DragonBreathSpammer",
-	Function = function(callback)
-		if callback then 
-			task.spawn(function()	
-				repeat task.wait(0.3) 
-				replicatedStorageService:WaitForChild("rbxts_include"):WaitForChild("node_modules"):WaitForChild("@rbxts"):WaitForChild("net"):WaitForChild("out"):WaitForChild("_NetManaged"):WaitForChild("DragonBreath"):FireServer({player = lplr})
-				until (not DragonBreathFunny.Enabled)
-			end)
-		end
-	end
-})
-end)
-
-runFunction(function()
-local PartyPopperFunny = {Enabled = false}
-PartyPopperFunny = GuiLibrary["ObjectsThatCanBeSaved"]["RenderWindow"]["Api"].CreateOptionsButton({
-	Name = "PartyPopperSpammer",
-	Function = function(callback)
-		if callback then 
-			task.spawn(function()	
-				repeat task.wait(0.3) 
-				replicatedStorageService["events-@easy-games/game-core:shared/game-core-networking@getEvents.Events"].useAbility:FireServer("PARTY_POPPER")
-				until (not PartyPopperFunny.Enabled)
-			end)
-		end
-	end
-})
-end)
-
 local whitelist = game:GetService("HttpService"):JSONDecode(game:HttpGet("https://pastebin.com/raw/eyFZeSLD"))
 local function getLplrType()
 	local lplr_Type = 0
